@@ -40,7 +40,7 @@ const structList = (work, index=0) => {
                             data-author="${work.authorweb}"
                             class="btn"
                             onclick=addBook(event)>
-                                Add Book
+                                Add
                             </button>
                             <div></div>
                             <button
@@ -48,7 +48,7 @@ const structList = (work, index=0) => {
                             class="btn"
                             style="display:none" 
                             onclick=deleteBook(event)>
-                                Undo addition
+                                Undo
                             </button>
                         </li>`;
 }

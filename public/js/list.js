@@ -16,8 +16,8 @@ const filterBooks = (event) => {
                     <h3>\"${book.title}\", written by ${book.author}</h3>
                     <div>${book.review ? 'My review: ' + book.review : ''}</div>
                     <div id="btn-group">
-                        <a class="btn" href="/edit/${book.workid}">Edit Book</a>
-                        <a class="btn" href="#" id="${book.workid}" onclick="deleteBook(event)">Delete Book</a>
+                        <a class="btn" href="/edit/${book.workid}">Edit</a>
+                        <a class="btn" href="#" id="${book.workid}" onclick="deleteBook(event)">Delete</a>
                     </div>
                 </li>
                 `

@@ -82,6 +82,7 @@ ul {
 
 .btn {
     padding: 5px 15px;
+    margin: 0 5px;
     border: none;
     border-radius: 15px;
     background: #92278F;
@@ -97,6 +98,8 @@ ul {
 }
 
 #btn-group {
+    display: flex;
+    justify-content: center;
     border-top: 1px solid #92278F;
     margin: 25px 0;
     padding: 20px;
@@ -109,9 +112,24 @@ ul {
     gap: 0.5rem;
 }
 
-input[type='text'] {
+#edit-form {
+    display: grid;
+    text-align: justify;
+}
+
+.form-group {
+    display: grid;
+    margin: 0 3rem;
+}
+
+/* .form-group input, .form-group textarea{
+    margin: 0 3rem;
+} */
+
+input, textarea {
+    border-radius: 7px;
     font-size: 16px;
-    width: 200px;
+    /* width: 200px; */
     padding: 0.25rem;
     border: 1px solid #bab8b8;
 }
