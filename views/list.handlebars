@@ -1,0 +1,24 @@
+<h1>You are a Book Man. These are your saved books.</h1>
+<form onsubmit="filterBooks(event)">
+    <input type="text" placeholder="Filter books...">
+    <button class="btn" type="submit">Filter</button>
+</form>
+<ul id="book-list">
+{{#each books as | book |}}
+    <li class="book-card">
+       <h3>"{{book.title}}", written by {{book.author}}</h3>
+        {{#if book.review}}
+            <p>My review: {{book.review}}</p>
+        {{/if}}
+        <div id="btn-group">
+            <a class="btn" href="/edit/{{book.workid}}">Edit Book</a>
+            <a class="btn" href="#" id="{{book.workid}}" onclick="deleteBook(event)">Delete Book</a>
+        </div>
+    </li>
+{{else}}
+    <p class="message">There is nothing in your list right now. Go back <a href="/">Home</a> and start adding some books!</p>
+{{/each}}
+</ul>
+
+<script src="/js/delete.js"></script>
+<script src="/js/list.js"></script>
