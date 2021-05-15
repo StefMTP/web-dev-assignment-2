@@ -1,6 +1,7 @@
 // searchWorks triggers whenever the search button is pushed. It fires a fetch GET request to the random house API, on the works endpoint, using the value of the 'search-term' input as a search query, and a max query set to 0 in order to return all results to the page. If nothing is returned, it alters the HTML of the page accordingly, to notify the user that nothing was found. If it finds any results, then they are brought in the page by DOM manipulation, using the method structList. There are two chances: if the results are multiple, then 'work' will be an array. If it is only one, it will be brought in as an object.
 const searchWorks = (event) => {
     event.preventDefault();
+    count.innerHTML = '';
     works.innerHTML = '<p class="message">Loading results, please wait...</p>';
     const search_term = document.getElementById("search-term").value;
     fetch(`https://reststop.randomhouse.com/resources/works?search="${search_term}"&max=0`, { 
