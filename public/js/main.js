@@ -9,7 +9,9 @@ const searchWorks = (event) => {
         headers: {
             'Accept': 'application/json'
         }
-    }).then(res => res.json()).then(data => {
+    })
+    .then(res => res.json())
+    .then(data => {
         if(!data.work) {
             works.innerHTML = "";
             if(!search_term) {
@@ -23,16 +25,16 @@ const searchWorks = (event) => {
         
         if(Array.isArray(data.work)){
             count.innerHTML = `<h4>${data.work.length} results found</h4>`;
-            data.work.forEach((work, index) => structList(work, index));
+            data.work.forEach((work, index) => works.innerHTML += structList(work, index));
         } else {
             count.innerHTML = `<h4>1 result found</h4>`;
-            structList(data.work);
+            works.innerHTML = structList(data.work);
         }
     });
 }
 
 const structList = (work, index=0) => {
-    works.innerHTML += `<li id="list-item-${index}" class="book-card">
+    return `<li id="list-item-${index}" class="book-card">
                             <h3>${work.titleweb}</h3>
                             <p>WRITTEN BY: ${work.authorweb}</p>
                             <button 
